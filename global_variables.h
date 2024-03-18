@@ -1,3 +1,10 @@
+/* *****************************************
+ * Fernando Costa Migliorini
+ * 2024-03-11
+ * LifeLogging
+ * global_variables.h
+ * *****************************************/
+
 #ifndef GLOBAL_VARIABLES_H
 #define GLOBAL_VARIABLES_H
 

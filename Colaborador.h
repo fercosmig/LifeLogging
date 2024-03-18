@@ -1,7 +1,13 @@
+/* *****************************************
+ * Fernando Costa Migliorini
+ * 2024-03-11
+ * LifeLogging
+ * Colaborador.h
+ * *****************************************/
+
 #ifndef COLABORADOR_H
 #define COLABORADOR_H
 
-#include <QString>
 #include "Grupo.h"
 
 class Colaborador{

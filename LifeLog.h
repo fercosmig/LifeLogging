@@ -1,7 +1,13 @@
+/* *****************************************
+ * Fernando Costa Migliorini
+ * 2024-03-11
+ * LifeLogging
+ * LifeLog.h
+ * *****************************************/
+
 #ifndef LIFELOG_H
 #define LIFELOG_H
 
-#include <QString>
 #include "Evento.h"
 #include "Colaborador.h"
 

@@ -1,14 +1,4 @@
 #include "fm_principal.h"
-#include <QMessageBox>
-#include <QVector>
-#include "Colaborador.h"
-#include "Evento.h"
-#include "EventoController.h"
-#include "LifeLogController.h"
-#include "global_variables.h"
-#include "global_functions.h"
-#include "fm_autenticacao.h"
-#include "fm_sobre.h"
 #include "ui_fm_principal.h"
 
 fm_principal::fm_principal(QWidget *parent) : QMainWindow(parent), ui(new Ui::fm_principal)
@@ -32,6 +22,7 @@ void fm_principal::inicializa_fm_principal()
     QString local_db = qApp->applicationDirPath();
     QString nome_db = "/db/lifelogging.db";
     QString banco = local_db + nome_db;
+    qDebug() << "fm_principal::inicializa_fm_principal() - banco: " << banco;
     global_variables::bancoDeDados = QSqlDatabase::addDatabase("QSQLITE");
     global_variables::bancoDeDados.setDatabaseName(banco);
 
@@ -137,7 +128,7 @@ void fm_principal::populaTableWidget()
 
     ui->tableWidget_life_log->setRowCount(0);
     int contador = 0;
-    for(LifeLog life_log : listaLifeLog){
+    for(LifeLog life_log : listaLifeLog) {
         ui->tableWidget_life_log->insertRow(contador);
         ui->tableWidget_life_log->setItem(contador, 0, new QTableWidgetItem(QString::number(life_log.getId())));
         ui->tableWidget_life_log->setItem(contador, 1, new QTableWidgetItem(life_log.getData()));
@@ -286,5 +277,34 @@ void fm_principal::on_comboBox_eventos_currentTextChanged(const QString &arg1)
         ui->lineEdit_outro->clear();
         ui->lineEdit_outro->setEnabled(false);
     }
+}
+
+
+void fm_principal::on_actionEventos_triggered()
+{
+    if(global_variables::isLogged){
+        if (global_variables::colaboradorLogado.getGrupo().getSigla() == "A") {
+            fm_eventos f_eventos;
+            f_eventos.exec();
+            carregaCombo();
+            populaTableWidget();
+        } else
+        QMessageBox::warning(this,"","Você não tem permissão de acesso a esta funcionalidade.");
+    } else
+        QMessageBox::warning(this,"","Você não está logado. Favor efetuar o login!");
+}
+
+
+void fm_principal::on_actionColaboradores_triggered()
+{
+    if(global_variables::isLogged){
+        if (global_variables::colaboradorLogado.getGrupo().getSigla() == "A") {
+            fm_colaboradores f_colaboradores;
+            f_colaboradores.exec();
+        } else
+            QMessageBox::warning(this,"","Você não tem permissão de acesso a esta funcionalidade.");
+    } else
+        QMessageBox::warning(this,"","Você não está logado. Favor efetuar o login!");
+
 }
 

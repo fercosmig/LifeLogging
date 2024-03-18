@@ -10,6 +10,8 @@ CONFIG += c++17
 
 SOURCES += \
     fm_autenticacao.cpp \
+    fm_colaboradores.cpp \
+    fm_eventos.cpp \
     fm_sobre.cpp \
     global_functions.cpp \
     global_variables.cpp \
@@ -27,6 +29,8 @@ HEADERS += \
     LifeLog.h \
     LifeLogController.h \
     fm_autenticacao.h \
+    fm_colaboradores.h \
+    fm_eventos.h \
     fm_principal.h \
     fm_sobre.h \
     global_functions.h \
@@ -34,6 +38,8 @@ HEADERS += \
 
 FORMS += \
     fm_autenticacao.ui \
+    fm_colaboradores.ui \
+    fm_eventos.ui \
     fm_principal.ui \
     fm_sobre.ui
 

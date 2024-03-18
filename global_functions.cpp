@@ -1,10 +1,4 @@
 #include "global_functions.h"
-#include <QDebug>
-#include <QHeaderView>
-#include <QString>
-#include <QTableWidget>
-#include <QRandomGenerator>
-#include <QDate>
 
 global_functions::global_functions() {}
 

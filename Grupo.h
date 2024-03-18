@@ -1,3 +1,10 @@
+/* *****************************************
+ * Fernando Costa Migliorini
+ * 2024-03-11
+ * LifeLogging
+ * Grupo.h
+ * *****************************************/
+
 #ifndef GRUPO_H
 #define GRUPO_H
 

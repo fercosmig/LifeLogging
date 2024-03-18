@@ -1,3 +1,10 @@
+/* *****************************************
+ * Fernando Costa Migliorini
+ * 2024-03-11
+ * LifeLogging
+ * Evento.h
+ * *****************************************/
+
 #ifndef EVENTO_H
 #define EVENTO_H
 

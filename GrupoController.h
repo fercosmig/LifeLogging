@@ -1,12 +1,16 @@
+/* *****************************************
+ * Fernando Costa Migliorini
+ * 2024-03-11
+ * LifeLogging
+ * GrupoController.h
+ * *****************************************/
+
 #ifndef GRUPOCONTROLLER_H
 #define GRUPOCONTROLLER_H
 
-#include <QString>
-#include "Grupo.h"
-#include <QtSql>
-#include <QDebug>
-#include <QVector>
 #include "Conexao.h"
+#include <QVector>
+#include "Grupo.h"
 
 class GrupoController{
 private:
@@ -23,7 +27,7 @@ public:
     Grupo buscaPorId(int id);
 };
 
-QVector<Grupo> GrupoController::listaTodos()
+inline QVector<Grupo> GrupoController::listaTodos()
 {
     sql = "SELECT ";
     sql += "tb_grupos.id, ";
@@ -60,7 +64,7 @@ QVector<Grupo> GrupoController::listaTodos()
     return ListaGrupos;
 }
 
-Grupo GrupoController::buscaPorId(int id_grupo)
+inline Grupo GrupoController::buscaPorId(int id_grupo)
 {
     sql = "SELECT ";
     sql += "tb_grupos.id, ";

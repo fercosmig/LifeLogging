@@ -1,12 +1,16 @@
+/* *****************************************
+ * Fernando Costa Migliorini
+ * 2024-03-11
+ * LifeLogging
+ * LifeLogController.h
+ * *****************************************/
+
 #ifndef LIFELOGCONTROLLER_H
 #define LIFELOGCONTROLLER_H
 
-#include <QString>
-#include "LifeLog.h"
-#include <QtSql>
-#include <QDebug>
-#include <QVector>
 #include "Conexao.h"
+#include <QVector>
+#include "LifeLog.h"
 
 class LifeLogController{
 private:
@@ -27,7 +31,7 @@ public:
     void remove(int id);
 };
 
-void LifeLogController::insere(LifeLog lifeLog)
+inline void LifeLogController::insere(LifeLog lifeLog)
 {
     sql = "INSERT INTO tb_life_log ( descricao, id_evento, id_colaborador ) ";
     sql += "VALUES ( :descricao, :id_evento, :id_colaborador )";
@@ -49,7 +53,7 @@ void LifeLogController::insere(LifeLog lifeLog)
     conn.close();
 }
 
-QVector<LifeLog> LifeLogController::listaPorColaboradorPeriodoPesquisa(int id_colaborador, QString data_inicial, QString data_final, QString descricao)
+inline QVector<LifeLog> LifeLogController::listaPorColaboradorPeriodoPesquisa(int id_colaborador, QString data_inicial, QString data_final, QString descricao)
 {
     sql = "SELECT ";
     sql += "tb_life_log.id, ";
@@ -130,7 +134,7 @@ QVector<LifeLog> LifeLogController::listaPorColaboradorPeriodoPesquisa(int id_co
     return listaLifeLog;
 }
 
-QVector<LifeLog> LifeLogController::listaPorColaboradorPeriodo(int id_colaborador, QString data_inicial, QString data_final)
+inline QVector<LifeLog> LifeLogController::listaPorColaboradorPeriodo(int id_colaborador, QString data_inicial, QString data_final)
 {
     sql = "SELECT ";
     sql += "tb_life_log.id, ";
@@ -208,7 +212,7 @@ QVector<LifeLog> LifeLogController::listaPorColaboradorPeriodo(int id_colaborado
     return listaLifeLog;
 }
 
-void LifeLogController::altera(LifeLog lifeLog)
+inline void LifeLogController::altera(LifeLog lifeLog)
 {
     sql ="UPDATE tb_life_log SET ";
     sql += "tb_life_log.data = :data, ";
@@ -235,7 +239,7 @@ void LifeLogController::altera(LifeLog lifeLog)
     conn.close();
 }
 
-void LifeLogController::remove(int id_life_log)
+inline void LifeLogController::remove(int id_life_log)
 {
     sql ="DELETE FROM tb_life_log WHERE id = :id";
 

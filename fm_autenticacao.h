@@ -2,6 +2,9 @@
 #define FM_AUTENTICACAO_H
 
 #include <QDialog>
+#include "global_functions.h"
+#include "ColaboradorController.h"
+#include <QMessageBox>
 
 namespace Ui {
 class fm_autenticacao;

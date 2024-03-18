@@ -30,7 +30,7 @@
    <widget class="QPushButton" name="pushButton_autenticacao">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>110</x>
       <y>450</y>
       <width>32</width>
       <height>32</height>
@@ -46,7 +46,7 @@
    <widget class="QLabel" name="label_logado">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>160</x>
       <y>460</y>
       <width>52</width>
       <height>17</height>
@@ -190,7 +190,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -216,6 +216,19 @@
      </item>
     </layout>
    </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>13</x>
+      <y>455</y>
+      <width>71</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Versão &lt;span style=&quot; font-weight:700; color:#00007f;&quot;&gt;4.0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -230,6 +243,8 @@
     <property name="title">
      <string>Menu</string>
     </property>
+    <addaction name="actionColaboradores"/>
+    <addaction name="actionEventos"/>
     <addaction name="actionSobre"/>
     <addaction name="actionSair"/>
    </widget>
@@ -246,7 +261,32 @@
     <string>Sair</string>
    </property>
   </action>
+  <action name="actionEventos">
+   <property name="text">
+    <string>Eventos</string>
+   </property>
+  </action>
+  <action name="actionColaboradores">
+   <property name="text">
+    <string>Colaboradores</string>
+   </property>
+  </action>
  </widget>
+ <tabstops>
+  <tabstop>pushButton_acao_comum1</tabstop>
+  <tabstop>pushButton_acao_comum2</tabstop>
+  <tabstop>pushButton_acao_comum3</tabstop>
+  <tabstop>comboBox_eventos</tabstop>
+  <tabstop>pushButton_inserir</tabstop>
+  <tabstop>dateEdit_data_inicial</tabstop>
+  <tabstop>dateEdit_data_final</tabstop>
+  <tabstop>lineEdit_pesquisar</tabstop>
+  <tabstop>pushButton_pesquisar</tabstop>
+  <tabstop>lineEdit_outro</tabstop>
+  <tabstop>tableWidget_life_log</tabstop>
+  <tabstop>pushButton_autenticacao</tabstop>
+  <tabstop>pushButton_fechar</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

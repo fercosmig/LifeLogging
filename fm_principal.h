@@ -2,7 +2,18 @@
 #define FM_PRINCIPAL_H
 
 #include <QMainWindow>
+#include <QMessageBox>
 #include "Conexao.h"
+#include "Colaborador.h"
+#include "Evento.h"
+#include "EventoController.h"
+#include "LifeLogController.h"
+#include "global_variables.h"
+#include "global_functions.h"
+#include "fm_autenticacao.h"
+#include "fm_sobre.h"
+#include "fm_eventos.h"
+#include "fm_colaboradores.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -49,6 +60,10 @@ private slots:
     void on_pushButton_acao_comum3_clicked();
 
     void on_comboBox_eventos_currentTextChanged(const QString &arg1);
+
+    void on_actionEventos_triggered();
+
+    void on_actionColaboradores_triggered();
 
 private:
     Ui::fm_principal *ui;
