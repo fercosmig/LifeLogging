@@ -2,5 +2,6 @@
     <qresource prefix="/icons">
         <file>images/locked.png</file>
         <file>images/unlocked.png</file>
+        <file>images/icone.png</file>
     </qresource>
 </RCC>
